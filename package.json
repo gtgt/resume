@@ -1,0 +1,49 @@
+{
+    "title": "Tamás Gere - CV",
+    "name": "gtgt-resume",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets",
+        "build:assets": "node scripts/build-assets.js",
+        "build:pug": "node scripts/build-pug.js",
+        "build:scripts": "node scripts/build-scripts.js",
+        "build:scss": "node scripts/build-scss.js",
+        "clean": "node scripts/clean.js",
+        "start": "npm run build && node scripts/start.js",
+        "start:debug": "npm run build && node scripts/start-debug.js"
+    },
+    "description": "Bootstrap 4 based online cv.",
+    "keywords": [
+        "css",
+        "sass",
+        "html",
+        "responsive",
+        "theme",
+        "template"
+    ],
+    "homepage": "https://tamasgere.me",
+    "bugs": {
+        "url": "https://github.com/gtgt/resume/issues",
+        "email": "788449+gtgt@users.noreply.github.com"
+    },
+    "license": "MIT",
+    "author": "Tamás Gere",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gtgt/resume.git"
+    },
+    "dependencies": {
+        "bootstrap": "4.6.0"
+    },
+    "devDependencies": {
+        "autoprefixer": "10.0.1",
+        "browser-sync": "2.26.13",
+        "chokidar": "3.4.3",
+        "concurrently": "5.3.0",
+        "postcss": "8.1.4",
+        "prettier": "2.1.2",
+        "pug": "3.0.0",
+        "sass": "1.28.0",
+        "shelljs": "0.8.4"
+    }
+}

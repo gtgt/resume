@@ -1,0 +1,84 @@
+/*---------------------------------------------------------------
+ * Project Details
+ *--------------------------------------------------------------*/
+#project-details {
+    padding: 40px 0;
+    .project-title {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    .project-details-carousel {
+        .owl-nav {
+            > button {
+                position: absolute;
+                top: 50vh;
+                margin-top: -60px;
+                line-height: .75;
+                font-size: 48px;
+                border-radius: 5px;
+                background: $gray-200;
+                opacity: .25;
+                outline: 0;
+                &:hover {
+                    opacity: .5;
+                }
+                > span {
+                    display: inline-block;
+                    padding: 0 20px 10px 18px;
+                }
+                &.owl-prev {
+                    left: 5px;
+                }
+                &.owl-next {
+                    right: 5px;
+                }
+            }
+        }
+        .owl-dots {
+            margin-top: 5px;
+            text-align: center;
+        }
+        .owl-dot {
+            display: inline-block;
+            margin: 0 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: $gray-300 !important;
+        }
+        .owl-dot.active {
+            background-color: $primary !important;
+        }
+    }
+    .project-info {
+        padding-top: 45px;
+        h3 {
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            font-size: 15px;
+            li {
+                + {
+                    li {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        p {
+            font-size: 15px;
+        }
+    }
+}
+@include media-breakpoint-down(lg) {
+    .project-details {
+        .project-info {
+            padding-top: 20px;
+        }
+    }
+}

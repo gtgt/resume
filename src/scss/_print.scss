@@ -1,0 +1,15 @@
+@media print {
+    [data-aos] {
+        visibility: visible!important;
+        opacity: 1!important;
+    }
+    body.with-sidenav {
+        padding-left: 0!important;
+    }
+    #sideNav, #project-filters {
+        display: none!important;
+    }
+    hr {
+        display: none;
+    }
+}

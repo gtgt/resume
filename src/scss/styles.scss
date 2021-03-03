@@ -1,0 +1,22 @@
+//noinspection CssUnknownTarget
+@import "bootstrap/scss/functions";
+
+// Import variables
+@import "./variables";
+
+// Import Bootstrap
+//noinspection CssUnknownTarget
+@import "bootstrap/scss/bootstrap";
+
+// Global CSS
+@import "./global";
+
+// Components
+@import "./components/sidenav";
+@import "./components/icons";
+
+// Sections
+@import "./content/resume";
+@import "./content/project-details";
+
+@import "./print";

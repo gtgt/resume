@@ -1,0 +1,79 @@
+mixin picture(src, alt)
+    img.img-fluid(src=src, alt=alt)
+
+doctype html
+html(lang='en')
+
+    head
+
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description', content='')
+        meta(name='author', content='')
+
+        title Resume - Start Bootstrap Theme
+
+        link(rel='icon', type='image/x-icon', href='assets/img/favicon.ico')
+
+        // Font Awesome icons (free version)
+        script(src='https://use.fontawesome.com/releases/v5.15.1/js/all.js', crossorigin='anonymous')
+
+        // Google fonts
+        link(href='https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700', rel='stylesheet', type='text/css')
+        link(href='https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i', rel='stylesheet', type='text/css')
+
+        link(href='https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css', rel='stylesheet')
+        link(href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', rel='stylesheet')
+
+        // Core theme CSS (includes Bootstrap)
+        link(href='css/styles.css', rel='stylesheet')
+    body#page-top
+        // Page Content
+        .container-fluid.p-0
+            // ======= project Details =======
+            section#project-details.project-details
+                .container(data-aos='fade-up')
+                    .row
+                        .col-lg-8
+                            h2.project-title
+                                block name
+                                    Project Name
+                            .owl-carousel.project-details-carousel
+                                block pictures
+                                    +picture('data:image/svg+xml;charset=UTF-8,%3Csvg width%3D"1024" height%3D"576" xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" viewBox%3D"0 0 1024 576" preserveAspectRatio%3D"none"%3E%3Cdefs%3E%3Cstyle type%3D"text%2Fcss"%3E%23holder_1518cf27d17 text %7B fill%3A%23FFFFFF%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C Helvetica%2C Open Sans%2C sans-serif%2C monospace%3Bfont-size%3A100pt %7D %3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg id%3D"holder_1518cf27d17"%3E%3Crect width%3D"1024" height%3D"576" fill%3D"%230D8FDB"%3E%3C%2Frect%3E%3Cg%3E%3Ctext x%3D"475" y%3D"333"%3E0%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')
+                        .col-lg-4.project-info
+                            h3 Project information
+                            ul
+                                li
+                                    label.font-weight-bold Category:
+                                    span
+                                        block category
+                                            | Web development
+                                li
+                                    label.font-weight-bold Company:
+                                    span
+                                        block company
+                                            | Company
+                                li
+                                    label.font-weight-bold Project date:
+                                    span
+                                        block date
+                                            | 01 March, 2020
+                                li
+                                    label.font-weight-bold Project URL:
+                                    span
+                                        block url
+                                            a(href='#') www.example.com
+                            p
+                                block details
+                                    | Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+            // End project Details
+
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js')
+
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js')
+
+    // Core theme JS
+    script(src='js/scripts.js')

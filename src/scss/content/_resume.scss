@@ -1,0 +1,271 @@
+section.resume-section {
+    display: flex;
+    align-items: center;
+    padding: 3rem 2rem;
+
+    .resume-section-content {
+        width: 100%;
+        p, ul > li {
+            text-align: justify;
+        }
+    }
+
+    &:last-of-type {
+        min-height: 100vh;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    section.resume-section {
+        min-height: 100vh;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    section.resume-section {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media print {
+    section.resume-section {
+        min-height: 0!important;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Experience
+--------------------------------------------------------------*/
+#xp {
+    .xp-title {
+        font-size: 26px;
+        font-weight: 700;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: $gray-700;
+    }
+    .xp-item, .xp-col-start, .xp-col-end {
+        padding: 0 0 20px 20px;
+        margin-top: -2px;
+        border-left: 2px solid $primary;
+        position: relative;
+    }
+    .xp-item {
+        padding-top: 8px;
+        h3 {
+            font-family: "Raleway", sans-serif;
+            color: $primary;
+            margin-bottom: 10px;
+        }
+        h4 {
+            background: $gray-100;
+            padding: 5px 15px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        &:last-child {
+            padding-bottom: 0;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-radius: 50px;
+            left: -10px;
+            font-size: $h3-font-size;
+            top: .5em;
+            margin-top: 3px;
+            background: $body-bg;
+            border: 2px solid $primary;
+        }
+    }
+    .xp-col-start, .xp-col-end {
+        border-left-style: dotted;
+        height: 2rem;
+    }
+}
+/*--------------------------------------------------------------
+# Project
+--------------------------------------------------------------*/
+#project {
+    .project-item {
+        margin-bottom: 30px;
+    }
+    #project-filters {
+        margin: 0 auto 25px auto;
+        list-style: none;
+        text-align: center;
+        background: $body-bg;
+        border-radius: 50px;
+        padding: 2px 15px;
+        li {
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1;
+            text-transform: uppercase;
+            color: #272829;
+            margin-bottom: 5px;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                color: $primary;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        li.filter-active {
+            color: $primary;
+        }
+    }
+    .project-wrap {
+        transition: 0.3s;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        background: fade-out($gray-800, .2);
+        &::before {
+            content: "";
+            background: fade-out($body-bg, .3);
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 30px;
+            bottom: 30px;
+            transition: all ease-in-out 0.3s;
+            z-index: 2;
+            opacity: 0;
+        }
+        .project-info {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+            transition: all ease-in-out 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: $gray-700;
+            &::before {
+                display: block;
+                content: "";
+                width: 48px;
+                height: 48px;
+                position: absolute;
+                top: 35px;
+                left: 35px;
+                border-top: 3px solid $gray-400;
+                border-left: 3px solid $gray-400;
+                transition: all 0.5s ease 0s;
+                z-index: 9994;
+            }
+            &::after {
+                display: block;
+                content: "";
+                width: 48px;
+                height: 48px;
+                position: absolute;
+                bottom: 35px;
+                right: 35px;
+                border-bottom: 3px solid $gray-400;
+                border-right: 3px solid $gray-400;
+                transition: all 0.5s ease 0s;
+                z-index: 9994;
+            }
+            &.venobox {
+                cursor: pointer;
+            }
+            h3 {
+                text-align: center;
+            }
+            p {
+                color: $gray-700;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
+        }
+        .project-links {
+            text-align: center;
+            z-index: 4;
+            a {
+                color: $gray-700;
+                margin: 0 2px;
+                font-size: 28px;
+                display: inline-block;
+                transition: 0.3s;
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+        &:hover {
+            &::before {
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 1;
+            }
+            .project-info {
+                opacity: 1;
+                &::before {
+                    top: 15px;
+                    left: 15px;
+                }
+                &::after {
+                    bottom: 15px;
+                    right: 15px;
+                }
+            }
+        }
+    }
+    @media print {
+        .project-container {
+            //display: block!important;
+            max-width: 100%;
+            .project-item {
+                /*display: block !important;
+                float: left;*/
+                .project-wrap {
+                    background: none;
+
+                    &:before {
+                        display: none;
+                    }
+
+                    .project-info {
+                        position: static;
+                        display: block;
+                        opacity: 1;
+
+                        &:before, &:after {
+                            display: none;
+                        }
+
+                        h4 {
+                            margin-bottom: 0;
+                        }
+
+                        .project-links {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
